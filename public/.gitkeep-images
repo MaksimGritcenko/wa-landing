@@ -1,0 +1,54 @@
+# SEO Image Assets Needed
+
+Place the following optimized images in the /public directory:
+
+## Required Images:
+
+### Favicons
+- `favicon.ico` (48x48, multiple sizes embedded)
+- `favicon-16x16.png` (16x16)
+- `favicon-32x32.png` (32x32)
+- `apple-touch-icon.png` (180x180)
+- `safari-pinned-tab.svg` (monochrome SVG)
+
+### Android/PWA Icons
+- `android-chrome-192x192.png` (192x192)
+- `android-chrome-512x512.png` (512x512)
+
+### Social Media Images
+- `og-image.jpg` (1200x630) - Open Graph / Facebook
+- `twitter-image.jpg` (1200x675) - Twitter Card
+- `logo.png` (500x500 min) - General logo
+
+## Image Optimization Tips:
+
+1. **Compress all images** using tools like:
+   - TinyPNG (https://tinypng.com/)
+   - Squoosh (https://squoosh.app/)
+   - ImageOptim
+
+2. **Use WebP format** for social images when possible (with JPG fallback)
+
+3. **Social media image guidelines**:
+   - High contrast against dark background
+   - Include brand name/logo
+   - Minimal text (large, readable)
+   - Tech-noir aesthetic (cyan/purple accents)
+
+4. **File size targets**:
+   - Favicons: < 10KB each
+   - Social images: < 500KB (< 200KB ideal)
+   - Logo: < 100KB
+
+## Quick Generate with Online Tools:
+
+- **Favicon Generator**: https://realfavicongenerator.net/
+- **OG Image**: https://www.opengraph.xyz/
+- **All-in-one**: https://favicon.io/
+
+## Temporary Placeholder:
+
+Until you create custom images, you can use:
+- A dark navy/black background with cyan accent
+- Your agency name in bold typography
+- Simple geometric network pattern

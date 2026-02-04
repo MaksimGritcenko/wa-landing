@@ -25,7 +25,7 @@ export const ServiceNode: FC<ServiceNodeProps> = ({ service }) => {
   })
 
   return (
-    <BorderGlow glowColor="cyan">
+    <BorderGlow>
       <motion.div
         ref={cardRef}
         variants={serviceNodeVariants}

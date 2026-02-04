@@ -10,7 +10,7 @@ interface MousePosition {
  * Track mouse position relative to an element
  * Used for magnetic button effect
  */
-export function useMousePosition(ref: RefObject<HTMLElement>, threshold = 100): MousePosition {
+export function useMousePosition(ref: RefObject<HTMLElement>, _threshold = 100): MousePosition {
   const [position, setPosition] = useState({ x: 0, y: 0, distance: Infinity })
 
   useEffect(() => {

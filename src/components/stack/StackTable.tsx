@@ -33,7 +33,7 @@ export const StackTable: FC = () => {
             </tr>
           </thead>
           <tbody>
-            {stackLayers.map((layer, index) => (
+            {stackLayers.map((layer) => (
               <motion.tr
                 key={layer.layer}
                 variants={stackRowVariants}

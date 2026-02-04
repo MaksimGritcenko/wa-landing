@@ -40,7 +40,7 @@ const NetworkScene: FC = () => {
   }, [viewport])
 
   // Create geometries
-  const { nodeGeometry, nodePositions } = useMemo(() => {
+  const { nodeGeometry } = useMemo(() => {
     const geometry = new THREE.BufferGeometry()
     const positions = new Float32Array(nodes.length * 3)
 

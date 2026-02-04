@@ -35,7 +35,7 @@ export const FloatingInput: FC<FloatingInputProps> = ({
   }
 
   const handleFocus = () => setIsFocused(true)
-  const handleBlur = (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleBlur = (_e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setIsFocused(false)
   }
 

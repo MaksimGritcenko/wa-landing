@@ -4,11 +4,15 @@ import { NetworkWebBackground } from "./NetworkWebBackground";
 import { KineticTypography } from "./KineticTypography";
 import { fadeInUpVariants } from "@/lib/animations";
 
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
 /**
  * Hero section with Three.js network background and kinetic typography
  * Full viewport height with layered content
  */
-export const HeroSection: FC = () => {
+export const HeroSection: FC<HeroSectionProps> = ({ onContactClick }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Three.js animated background */}
@@ -100,21 +104,21 @@ export const HeroSection: FC = () => {
 
           {/* CTA Button */}
           <motion.div variants={fadeInUpVariants} className="pt-2 sm:pt-4">
-            <a
-              href="#contact"
+            <button
               onClick={() => {
                 window.dataLayer?.push({
                   event: "cta_click",
                   button_name: "hero_get_started",
                   button_location: "hero_section",
                 });
+                onContactClick?.();
               }}
               className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-accent-cyan text-obsidian-950 font-semibold rounded-lg
                        hover:bg-accent-cyan/90 transition-colors duration-300
-                       border-0.5 border-accent-cyan/20 text-sm sm:text-base"
+                       border-0.5 border-accent-cyan/20 text-sm sm:text-base cursor-pointer"
             >
               Get Started
-            </a>
+            </button>
           </motion.div>
 
           {/* Scroll indicator */}

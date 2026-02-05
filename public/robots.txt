@@ -1,34 +1,56 @@
-# robots.txt for Premium Web Agency
+# robots.txt for Help & Go - Premium Web Development Agency
 # https://helpandgo.net/robots.txt
+# Last Updated: 2026-02-05
 
+# Allow all bots to crawl the entire site
 User-agent: *
 Allow: /
 
-# Disallow admin and private pages (add as needed)
-# Disallow: /admin/
-# Disallow: /private/
+# Disallow nothing - full site access for SEO
+# (Add restrictions here if needed in the future)
+# Example: Disallow: /admin/
 
-# Sitemap location
+# Primary sitemap location
 Sitemap: https://helpandgo.net/sitemap.xml
 
-# Crawl-delay for better server performance
+# Crawl-delay (optional - helps prevent server overload)
+# Most modern crawlers ignore this, but some respect it
 Crawl-delay: 1
 
-# Allow all major search engines
+# Specific rules for major search engines
+# Googlebot (Google)
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
-User-agent: Bingbot
+# Googlebot-Image (Google Images)
+User-agent: Googlebot-Image
 Allow: /
 
+# Bingbot (Microsoft Bing)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Slurp (Yahoo)
 User-agent: Slurp
 Allow: /
 
+# DuckDuckBot (DuckDuckGo)
 User-agent: DuckDuckBot
 Allow: /
 
+# Baiduspider (Baidu - China)
 User-agent: Baiduspider
 Allow: /
 
+# YandexBot (Yandex - Russia)
 User-agent: YandexBot
+Allow: /
+
+# Additional search engines
+User-agent: ia_archiver
+Allow: /
+
+User-agent: Applebot
 Allow: /

@@ -1,28 +1,28 @@
-import { FC, useState } from 'react'
-import { HeroSection } from './components/hero/HeroSection'
-import { ServicesGrid } from './components/services/ServicesGrid'
-import { StackDeepDive } from './components/stack/StackDeepDive'
-import { ContactForm } from './components/contact/ContactForm'
-import { SectionDivider } from './components/ui/SectionDivider'
-import { FloatingLogosBackground } from './components/ui/FloatingLogosBackground'
-import { Header } from './components/layout/Header'
-import { Footer } from './components/layout/Footer'
-import { AboutSection } from './components/about/AboutSection'
-import { PricingSection } from './components/pricing/PricingSection'
-import { PortfolioSection } from './components/portfolio/PortfolioSection'
-import { BlogSection } from './components/blog/BlogSection'
-import { Modal } from './components/ui/Modal'
-import { LegalModal } from './components/legal/LegalModal'
-import { CookieConsent } from './components/ui/CookieConsent'
+import { FC, useState } from "react";
+import { HeroSection } from "./components/hero/HeroSection";
+import { ServicesGrid } from "./components/services/ServicesGrid";
+import { StackDeepDive } from "./components/stack/StackDeepDive";
+import { ContactForm } from "./components/contact/ContactForm";
+import { SectionDivider } from "./components/ui/SectionDivider";
+import { FloatingLogosBackground } from "./components/ui/FloatingLogosBackground";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { AboutSection } from "./components/about/AboutSection";
+import { PricingSection } from "./components/pricing/PricingSection";
+import { PortfolioSection } from "./components/portfolio/PortfolioSection";
+import { BlogSection } from "./components/blog/BlogSection";
+import { Modal } from "./components/ui/Modal";
+import { LegalModal } from "./components/legal/LegalModal";
+import { CookieConsent } from "./components/ui/CookieConsent";
 
 /**
  * Main application component
  * Assembles all landing page sections
  */
 const App: FC = () => {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
-  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-obsidian-900 text-obsidian-100 antialiased">
@@ -73,7 +73,7 @@ const App: FC = () => {
       <SectionDivider />
 
       {/* Blog Section */}
-      <BlogSection />
+      {/* <BlogSection /> */}
 
       {/* Footer */}
       <Footer
@@ -107,7 +107,7 @@ const App: FC = () => {
       {/* Cookie Consent Banner */}
       <CookieConsent onPrivacyClick={() => setIsPrivacyModalOpen(true)} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

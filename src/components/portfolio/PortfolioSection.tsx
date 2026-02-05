@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useOnClickOutside } from 'usehooks-ts';
 
 const projects = [
   {
@@ -54,6 +55,25 @@ const projects = [
 
 export const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(modalRef, () => {
+    if (selectedProject) {
+      setSelectedProject(null);
+    }
+  });
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProject]);
 
   return (
     <section id="portfolio" className="relative py-32 px-6 md:px-8 overflow-hidden">
@@ -160,20 +180,19 @@ export const PortfolioSection = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              onClick={() => setSelectedProject(null)}
               className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50"
             />
 
             {/* Modal */}
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-obsidian-900/95 backdrop-blur-xl border border-obsidian-700/50 rounded-2xl shadow-2xl"
-              >
+              <div ref={modalRef}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-obsidian-900/95 backdrop-blur-xl border border-obsidian-700/50 rounded-2xl shadow-2xl"
+                >
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedProject(null)}
@@ -223,7 +242,8 @@ export const PortfolioSection = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </>
         )}

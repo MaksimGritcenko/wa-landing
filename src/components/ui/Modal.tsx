@@ -1,5 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useOnClickOutside } from "usehooks-ts";
 
 interface ModalProps {
   isOpen: boolean;
@@ -9,35 +10,48 @@ interface ModalProps {
 }
 
 export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useOnClickOutside(modalRef, () => {
+    if (isOpen) {
+      window.dataLayer?.push({
+        event: "modal_close",
+        modal_name: title || "Contact Form",
+        close_method: "backdrop",
+      });
+      onClose();
+    }
+  });
+
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
       window.dataLayer?.push({
-        event: 'modal_open',
-        modal_name: title || 'Contact Form',
+        event: "modal_open",
+        modal_name: title || "Contact Form",
       });
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, title]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
 
     if (isOpen) {
-      window.addEventListener('keydown', handleEscape);
+      window.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      window.removeEventListener('keydown', handleEscape);
+      window.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen, onClose]);
 
@@ -51,34 +65,26 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            onClick={() => {
-              window.dataLayer?.push({
-                event: 'modal_close',
-                modal_name: title || 'Contact Form',
-                close_method: 'backdrop',
-              });
-              onClose();
-            }}
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
           />
 
           {/* Modal */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-obsidian-900/95 backdrop-blur-xl border border-obsidian-700/50 rounded-2xl shadow-2xl"
-            >
+            <div ref={modalRef}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-obsidian-900/95 backdrop-blur-xl border border-obsidian-700/50 rounded-2xl shadow-2xl"
+              >
               {/* Close Button */}
               <button
                 onClick={() => {
                   window.dataLayer?.push({
-                    event: 'modal_close',
-                    modal_name: title || 'Contact Form',
-                    close_method: 'button',
+                    event: "modal_close",
+                    modal_name: title || "Contact Form",
+                    close_method: "button",
                   });
                   onClose();
                 }}
@@ -109,7 +115,8 @@ export const Modal = ({ isOpen, onClose, children, title }: ModalProps) => {
                 )}
                 {children}
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </>
       )}

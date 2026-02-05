@@ -1,32 +1,36 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '30+', label: 'Happy Clients' },
-  { value: '5+', label: 'Years Experience' },
-  { value: '100%', label: 'Client Satisfaction' },
+  { value: "50+", label: "Projects Delivered" },
+  { value: "30+", label: "Happy Clients" },
+  { value: "7+", label: "Years Experience" },
+  { value: "100%", label: "Client Satisfaction" },
 ];
 
 const teamValues = [
   {
-    icon: '🎯',
-    title: 'Mission-Driven',
-    description: 'We build digital solutions that solve real business problems and drive measurable results.',
+    icon: "🎯",
+    title: "Mission-Driven",
+    description:
+      "We build digital solutions that solve real business problems and drive measurable results.",
   },
   {
-    icon: '⚡',
-    title: 'Innovation First',
-    description: 'Staying ahead of the curve with cutting-edge technologies and modern development practices.',
+    icon: "⚡",
+    title: "Innovation First",
+    description:
+      "Staying ahead of the curve with cutting-edge technologies and modern development practices.",
   },
   {
-    icon: '🤝',
-    title: 'Client Partnership',
-    description: 'Your success is our success. We work collaboratively to bring your vision to life.',
+    icon: "🤝",
+    title: "Client Partnership",
+    description:
+      "Your success is our success. We work collaboratively to bring your vision to life.",
   },
   {
-    icon: '🔒',
-    title: 'Quality Assured',
-    description: 'Rigorous testing, clean code, and enterprise-grade security in every project we deliver.',
+    icon: "🔒",
+    title: "Quality Assured",
+    description:
+      "Rigorous testing, clean code, and enterprise-grade security in every project we deliver.",
   },
 ];
 
@@ -46,11 +50,15 @@ export const AboutSection = () => {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Help & Go</span>
+            About{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Help & Go
+            </span>
           </h2>
           <p className="text-obsidian-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We're a premium web development agency specializing in building high-performance,
-            scalable digital solutions for businesses ready to transform their online presence.
+            We're a premium web development agency specializing in building
+            high-performance, scalable digital solutions for businesses ready to
+            transform their online presence.
           </p>
         </motion.div>
 
@@ -74,7 +82,9 @@ export const AboutSection = () => {
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-2">
                 {stat.value}
               </div>
-              <div className="text-obsidian-400 text-sm md:text-base">{stat.label}</div>
+              <div className="text-obsidian-400 text-sm md:text-base">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -95,7 +105,7 @@ export const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               whileHover={{ y: -5 }}
-              className="p-8 bg-obsidian-900/50 backdrop-blur-sm border border-obsidian-800/50 rounded-xl hover:border-cyan-500/50 transition-all duration-300 group"
+              className="p-8 bg-obsidian-900/50 backdrop-blur-sm border border-obsidian-800/50 rounded-xl hover:border-cyan-500/50"
             >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {value.icon}
@@ -126,11 +136,11 @@ export const AboutSection = () => {
             onClick={(e) => {
               e.preventDefault();
               window.dataLayer?.push({
-                event: 'cta_click',
-                button_name: 'lets_talk',
-                button_location: 'about_section',
+                event: "cta_click",
+                button_name: "lets_talk",
+                button_location: "about_section",
               });
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg text-white font-medium shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105"
           >

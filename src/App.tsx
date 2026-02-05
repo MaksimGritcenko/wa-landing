@@ -10,7 +10,6 @@ import { Footer } from "./components/layout/Footer";
 import { AboutSection } from "./components/about/AboutSection";
 import { PricingSection } from "./components/pricing/PricingSection";
 import { PortfolioSection } from "./components/portfolio/PortfolioSection";
-import { BlogSection } from "./components/blog/BlogSection";
 import { Modal } from "./components/ui/Modal";
 import { LegalModal } from "./components/legal/LegalModal";
 import { CookieConsent } from "./components/ui/CookieConsent";

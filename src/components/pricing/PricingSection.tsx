@@ -4,6 +4,8 @@ const pricingTiers = [
   {
     name: 'Starter',
     price: '$2,999',
+    originalPrice: '$5,998',
+    discount: '50%',
     description: 'Perfect for small businesses and startups',
     features: [
       'Responsive landing page',
@@ -20,6 +22,8 @@ const pricingTiers = [
   {
     name: 'Professional',
     price: '$7,999',
+    originalPrice: '$15,998',
+    discount: '50%',
     description: 'Ideal for growing businesses',
     features: [
       'Custom web application',
@@ -113,6 +117,16 @@ export const PricingSection = ({ onContactClick }: PricingSectionProps) => {
               </div>
 
               <div className="mb-8">
+                {'originalPrice' in tier && (
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl text-obsidian-500 line-through">
+                      {tier.originalPrice}
+                    </span>
+                    <span className="px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/50 rounded-full text-cyan-400 text-xs font-bold">
+                      SAVE {tier.discount}
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-baseline">
                   <span className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                     {tier.price}

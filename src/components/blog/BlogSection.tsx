@@ -8,7 +8,7 @@ const blogPosts = [
     date: 'Feb 1, 2026',
     readTime: '5 min read',
     category: 'Technology',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
+    image: '/blog-1.jpg',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const blogPosts = [
     date: 'Jan 28, 2026',
     readTime: '8 min read',
     category: 'Development',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+    image: '/blog-2.jpg',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const blogPosts = [
     date: 'Jan 25, 2026',
     readTime: '10 min read',
     category: 'Architecture',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    image: '/blog-3.jpg',
   },
 ];
 

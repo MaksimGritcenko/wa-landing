@@ -11,6 +11,7 @@ import { AboutSection } from "./components/about/AboutSection";
 import { PricingSection } from "./components/pricing/PricingSection";
 import { PortfolioSection } from "./components/portfolio/PortfolioSection";
 import { BookCallSection } from "./components/call/BookCallSection";
+import { TestimonialsSection } from "./components/testimonials/TestimonialsSection";
 import { Modal } from "./components/ui/Modal";
 import { LegalModal } from "./components/legal/LegalModal";
 import { CookieConsent } from "./components/ui/CookieConsent";
@@ -62,6 +63,12 @@ const App: FC = () => {
 
       {/* About Section */}
       <AboutSection />
+
+      {/* Section Divider */}
+      <SectionDivider />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
 
       {/* Section Divider */}
       <SectionDivider />

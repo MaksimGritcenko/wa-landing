@@ -5,27 +5,30 @@ import { useOnClickOutside } from 'usehooks-ts';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    category: 'Web Application',
-    description: 'Modern e-commerce solution with real-time inventory management',
-    tags: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
+    title: 'Internal MVP — SaaS Platform',
+    category: 'Internal Build',
+    description: 'A full-stack MVP built to validate a SaaS idea in under 3 weeks. Designed system architecture for scale, built authentication, dashboards, and API layer. Focused on performance and SEO from day one.',
+    problem: 'Founders needed a production-ready MVP fast, without painting themselves into technical debt.',
+    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Docker', 'AWS'],
+    image: '/portfolio-1.jpg',
   },
   {
     id: 2,
-    title: 'Healthcare Dashboard',
-    category: 'SaaS Platform',
-    description: 'Patient management system with analytics and scheduling',
-    tags: ['TypeScript', 'React', 'PostgreSQL', 'AWS'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    title: 'Client Prototype (NDA)',
+    category: 'Concept MVP',
+    description: 'A secure web application prototype for an early-stage startup. Rapid prototyping with real backend logic, production-grade security and deployment, and clean, extensible codebase for future growth.',
+    problem: 'Investor demo required a working product, not mockups.',
+    tags: ['React', 'NestJS', 'MySQL', 'Nginx'],
+    image: '/portfolio-2.jpg',
   },
   {
     id: 3,
-    title: 'Real Estate Portal',
-    category: 'Web Application',
-    description: 'Property listing platform with virtual tours and messaging',
-    tags: ['Next.js', 'Prisma', 'Tailwind', 'Vercel'],
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+    title: 'Concept Project — Mobile Application',
+    category: 'Mobile Application',
+    description: 'A mobile app concept built to explore UX flows and performance on real devices. Built cross-platform mobile app, integrated maps, authentication, and API communication. Optimized for real-world usage, not demos.',
+    problem: 'Validate idea usability before full investment.',
+    tags: ['React Native', 'Expo', 'GraphQL'],
+    image: '/portfolio-3.jpg',
   },
   {
     id: 4,
@@ -33,15 +36,15 @@ const projects = [
     category: 'Mobile Application',
     description: 'Workout tracking app with social features and AI coaching',
     tags: ['React Native', 'Firebase', 'TensorFlow', 'Redux'],
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80',
+    image: '/portfolio-4.jpg',
   },
   {
     id: 5,
     title: 'Restaurant Booking System',
     category: 'Web Application',
     description: 'Table reservation platform with menu management',
-    tags: ['Vue.js', 'Laravel', 'MySQL', 'Stripe'],
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+    tags: ['NextJs', 'Laravel', 'MySQL', 'Stripe'],
+    image: '/portfolio-5.jpg',
   },
   {
     id: 6,
@@ -49,7 +52,7 @@ const projects = [
     category: 'SaaS Platform',
     description: 'Investment portfolio tracker with real-time market data',
     tags: ['React', 'Python', 'FastAPI', 'Chart.js'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+    image: '/portfolio-6.jpg',
   },
 ];
 
@@ -87,18 +90,28 @@ export const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Portfolio</span>
+            Selected Work & <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Case Studies</span>
           </h2>
-          <p className="text-obsidian-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Explore our recent projects and see how we've helped businesses transform their digital presence.
-          </p>
+          <div className="text-obsidian-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed space-y-4">
+            <p className="font-medium">We don't believe in pretending.</p>
+            <p>Some of the projects below are <strong>internal builds, concept MVPs, or NDA-protected work</strong>. They represent how we think, how we build, and how we solve real product problems — not just pretty UI.</p>
+            <div className="text-left max-w-2xl mx-auto mt-6 space-y-2">
+              <p className="text-base font-medium text-cyan-400">Every project follows the same principles:</p>
+              <ul className="list-disc list-inside space-y-1 text-base">
+                <li>Clear product thinking before code</li>
+                <li>Modern, scalable tech stacks</li>
+                <li>Performance, SEO, and long-term maintainability</li>
+                <li>Decisions explained, not hidden</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -168,6 +181,21 @@ export const PortfolioSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* NDA Note */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <div className="p-6 bg-obsidian-900/50 border border-obsidian-800/50 rounded-xl">
+            <p className="text-obsidian-400 text-base italic">
+              <strong className="text-cyan-400">Note:</strong> Some client work is protected by NDA. We're happy to walk you through real examples during a private call.
+            </p>
+          </div>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal */}
@@ -220,16 +248,28 @@ export const PortfolioSection = () => {
                     {selectedProject.category}
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                     {selectedProject.title}
                   </h3>
 
-                  <p className="text-obsidian-300 text-lg leading-relaxed mb-6">
-                    {selectedProject.description}
-                  </p>
+                  {selectedProject.problem && (
+                    <div className="mb-6">
+                      <h4 className="text-cyan-400 font-semibold mb-2">Problem:</h4>
+                      <p className="text-obsidian-300 text-base leading-relaxed">
+                        {selectedProject.problem}
+                      </p>
+                    </div>
+                  )}
 
                   <div className="mb-6">
-                    <h4 className="text-obsidian-400 text-sm font-medium mb-3">Technologies Used:</h4>
+                    <h4 className="text-cyan-400 font-semibold mb-2">What we did:</h4>
+                    <p className="text-obsidian-300 text-base leading-relaxed">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+
+                  <div className="mb-6">
+                    <h4 className="text-obsidian-400 text-sm font-medium mb-3">Stack:</h4>
                     <div className="flex flex-wrap gap-3">
                       {selectedProject.tags.map((tag) => (
                         <span

@@ -10,6 +10,7 @@ import { Footer } from "./components/layout/Footer";
 import { AboutSection } from "./components/about/AboutSection";
 import { PricingSection } from "./components/pricing/PricingSection";
 import { PortfolioSection } from "./components/portfolio/PortfolioSection";
+import { BookCallSection } from "./components/call/BookCallSection";
 import { Modal } from "./components/ui/Modal";
 import { LegalModal } from "./components/legal/LegalModal";
 import { CookieConsent } from "./components/ui/CookieConsent";
@@ -49,6 +50,12 @@ const App: FC = () => {
 
       {/* Portfolio Section */}
       <PortfolioSection />
+
+      {/* Section Divider */}
+      <SectionDivider />
+
+      {/* Book Call Section */}
+      <BookCallSection onContactClick={() => setIsContactModalOpen(true)} />
 
       {/* Section Divider */}
       <SectionDivider />

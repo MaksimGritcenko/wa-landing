@@ -55,11 +55,33 @@ export const AboutSection = () => {
               Help & Go
             </span>
           </h2>
-          <p className="text-obsidian-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            We're a premium web development agency specializing in building
-            high-performance, scalable digital solutions for businesses ready to
-            transform their online presence.
-          </p>
+          <div className="text-obsidian-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed space-y-6">
+            <p>
+              We're a premium web development agency specializing in building
+              high-performance, scalable digital solutions for businesses ready to
+              transform their online presence. With over 7 years of hands-on experience,
+              we've helped startups launch MVPs, enterprises modernize legacy systems,
+              and growing businesses scale their digital infrastructure.
+            </p>
+
+            <p className="text-base md:text-lg text-obsidian-400">
+              Our expertise spans the full stack of modern web technologies. From React and
+              TypeScript on the frontend to Node.js, Python, and PHP on the backend, we build
+              production-ready applications that prioritize performance, security, and maintainability.
+              Whether you need a lightning-fast e-commerce platform, a complex SaaS application,
+              or a custom web solution tailored to your unique requirements, we bring technical
+              excellence and product thinking to every project.
+            </p>
+
+            <p className="text-base md:text-lg text-obsidian-400">
+              We don't just write code — we solve business problems. Our approach combines
+              clear product thinking with modern, scalable tech stacks. Every project follows
+              the same principles: clean architecture, comprehensive testing, SEO optimization,
+              and long-term maintainability. We work transparently, explain our technical
+              decisions, and deliver solutions that grow with your business. From initial
+              consultation to deployment and beyond, we're your partner in digital success.
+            </p>
+          </div>
         </motion.div>
 
         {/* Stats Grid */}

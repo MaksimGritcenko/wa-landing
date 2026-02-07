@@ -66,15 +66,11 @@ export const HeroSection: FC<HeroSectionProps> = ({ onContactClick }) => {
           {/* Main headline */}
           <div className="space-y-2 sm:space-y-3 md:space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-obsidian-100">
-              Building
+              Building Modern Web Applications
             </h1>
 
             {/* Kinetic cycling keywords */}
             <KineticTypography />
-
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-obsidian-100">
-              Web Applications
-            </h1>
           </div>
 
           {/* Stats and description */}
